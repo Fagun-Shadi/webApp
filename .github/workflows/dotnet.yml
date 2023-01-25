@@ -20,9 +20,18 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    - name: Setup Python
+      uses: actions/setup-python@v4.5.0
+      with:
+        python-version: 4.5.0
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Get Joke Of The Day
+      uses: h2floh/action-get-joke-of-the-day@v1
+    - name: Show Output
+      run: echo "My Message"
+
