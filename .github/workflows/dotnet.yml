@@ -31,5 +31,5 @@ jobs:
     - name: Get Joke Of The Day
       uses: h2floh/action-get-joke-of-the-day@v1
     - name: Show Output
-      run: echo "My Message"
+      run: echo "My Message" $(python-version)
 
