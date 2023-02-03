@@ -27,6 +27,8 @@ jobs:
         architecture: 'x64'
     - name: Restore dependencies
       run: dotnet restore
+    - name: Azure Login
+      uses: Azure/login@v1.4.6
     - name: Build
       run: dotnet build --no-restore
     - name: Test
